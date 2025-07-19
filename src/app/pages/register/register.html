@@ -1,0 +1,43 @@
+<app-default-register-layout>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+  <app-primary-input
+    formControlName="nome"
+    label="Nome"
+    placeholder="Digite seu nome"
+    type="text"
+  ></app-primary-input>
+
+  <app-primary-input
+    formControlName="sobrenome"
+    label="Sobrenome"
+    placeholder="Digite seu sobrenome"
+    type="text"
+  ></app-primary-input>
+
+  <app-primary-input
+    formControlName="email"
+    label="Email"
+    placeholder="Digite seu email"
+    type="email"
+  ></app-primary-input>
+
+  <app-primary-input
+    formControlName="telefone"
+    label="Telefone"
+    placeholder="Digite seu telefone"
+    type="tel"
+  ></app-primary-input>
+
+  <app-primary-input
+    formControlName="senha"
+    label="Senha"
+    placeholder="Digite sua senha"
+    type="password"
+  ></app-primary-input>
+
+
+</form>
+
+
+</app-default-register-layout>

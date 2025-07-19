@@ -1,0 +1,34 @@
+<div class="layout">
+    <aside class="sidebar" *ngIf="sidebarVisible">
+    <button 
+    [class.active]="activeRoute === '/'"
+    (click)="goHome()"
+    >Home</button>
+    <button
+    [class.active] ="activeRoute === '/gestao-despesas'"
+    routerLink="/gestao-despesas"
+    >Gestão de despesas</button>
+    <button
+    [class.active] ="activeRoute === '/adicionar-editar'"
+    routerLink="/adicionar-editar"
+    >Adicionar/editar</button>
+    <button
+    [class.active]="activeRoute === 'historico-pagamentos'"
+    routerlink="/historico-pagamentos"
+    >Historico de pagamentos</button>
+    </aside>
+      
+    <div class="main-area">
+      <div class="menu-header">
+        
+        <div class="menu-icon" (click)="toggleSidebar()">☰</div>
+      </div>
+ 
+      <div class="top-line"></div>
+      
+      <main class="content">
+        <router-outlet></router-outlet>
+      </main>
+    </div>
+  </div>
+  

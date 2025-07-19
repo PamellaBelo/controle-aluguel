@@ -1,0 +1,29 @@
+<app-default-login-layout 
+title="titulo"
+primaryBtnText="Entrar"
+secondaryBtnText="Cadastre-se"
+(submit)="submit()"
+(navigate)="navigate()"
+>
+<form [formGroup]="loginForm">
+    <app-primary-input
+      [formName]="'email'"
+      [formGroup]="loginForm"
+      type="email"
+      label="Email"
+      placeholder="Digite seu email"
+       autocomplete="username"
+    ></app-primary-input>
+  
+    <app-primary-input
+    [formName]="'password'"
+    [formGroup]="loginForm"
+    type="password"
+    label="Senha"
+    placeholder="Digite sua senha"
+  ></app-primary-input>  
+<span> Esqueceu a senha?</span>
+
+  </form>
+  
+</app-default-login-layout>

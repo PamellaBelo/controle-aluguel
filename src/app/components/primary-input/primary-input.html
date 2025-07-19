@@ -1,0 +1,19 @@
+<div class="input-wrapper" [formGroup]="formGroup">
+    <label [for]="formName">{{ label }}</label>
+    <div class="input-content">
+        <input
+  [formControlName]="formName"
+  [type]="type"
+  [placeholder]="placeholder"
+  [autocomplete]="autocomplete"
+
+/>
+
+        <div>
+            <ng-content></ng-content>
+        </div>
+    </div>
+</div>
+
+
+  

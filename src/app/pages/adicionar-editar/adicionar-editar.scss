@@ -1,0 +1,104 @@
+@use "../../../styles/variables" as *;
+
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+  min-height: 100vh;
+  background-color: white;
+
+  h1 {
+    margin-bottom: 2rem;
+    color: $primary-color;
+  }
+}
+
+.botao-acao {
+  background-color: $primary-color;
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  margin: 0.5rem;
+  box-shadow:0px 8px 12px rgba(148.23004603385925, 64.33935597538948, 255, 0.20000000298023224);
+
+
+  &:hover {
+    background-color: ($primary-color, 10%);
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+.botao-adicionar {
+  background-color: $primary-color;
+}
+
+.botao-editar {
+  background-color: $secundary-color;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  width: 100%;
+  max-width: 500px;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  color: $text-color;
+  font-size: 0.95rem;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"] {
+  padding: 0.7rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-top: 0.4rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+
+  &:focus {
+    border-color: $primary-color;
+    box-shadow: 0 0 0 2px rgba($primary-color, 0.2);
+  }
+}
+
+
+input[type="checkbox"] {
+  margin-top: 0.6rem;
+  width: 18px;
+  height: 18px;
+}
+
+.botoes-form {
+
+  display: flex;
+  gap: 4rem; // aumenta a distância entre eles
+  justify-content: center;
+  margin-top: 2rem;
+
+  button {
+    @extend .botao-acao;
+    min-width: 150px;
+  }
+}

@@ -1,0 +1,37 @@
+<!-- Botões iniciais -->
+<div class="page-container" *ngIf="!mostrandoFormulario">
+  <button class="botao-acao botao-adicionar" (click)="mostrarAdicionar()">Adicionar Despesa</button>
+  <button class="botao-acao botao-editar" (click)="mostrarEditar()">Editar Despesa</button>
+</div>
+
+<!-- Formulário -->
+<div class="page-container" *ngIf="mostrandoFormulario">
+  <h1>{{ editando ? 'Editar Despesa' : 'Adicionar Despesa' }}</h1>
+
+  <form [formGroup]="despesaForm" (ngSubmit)="salvar()">
+    <label>
+      Nome:
+      <input type="text" formControlName="nome" />
+    </label>
+
+    <label>
+      Data de Vencimento:
+      <input type="date" formControlName="dataVencimento" />
+    </label>
+
+    <label>
+      Valor:
+      <input type="number" formControlName="valor" />
+    </label>
+
+    <label>
+      Pago:
+      <input type="checkbox" formControlName="pago" />
+    </label>
+
+    <div class="botoes-form">
+      <button type="submit">Salvar</button>
+      <button type="button" (click)="voltar()">Voltar</button>
+    </div>
+  </form>
+</div>
