@@ -1,18 +1,18 @@
-<!-- Botões iniciais -->
+
 <div class="page-container" *ngIf="!mostrandoFormulario">
   <button class="botao-acao botao-adicionar" (click)="mostrarAdicionar()">Adicionar Despesa</button>
   <button class="botao-acao botao-editar" (click)="mostrarEditar()">Editar Despesa</button>
 </div>
 
-<!-- Formulário -->
 <div class="page-container" *ngIf="mostrandoFormulario">
   <h1>{{ editando ? 'Editar Despesa' : 'Adicionar Despesa' }}</h1>
 
   <form [formGroup]="despesaForm" (ngSubmit)="salvar()">
-    <label>
-      Nome:
-      <input type="text" formControlName="nome" />
-    </label>
+    <label>Imóvel:</label>
+  <select formControlName="imovelId">
+    <option value="">Selecione um imóvel</option>
+    <option *ngFor="let imovel of imoveis" [value]="imovel.id">{{ imovel.nome }}</option>
+  </select>
 
     <label>
       Data de Vencimento:
@@ -20,7 +20,7 @@
     </label>
 
     <label>
-      Valor:
+      Qual o valor
       <input type="number" formControlName="valor" />
     </label>
 
@@ -28,6 +28,27 @@
       Pago:
       <input type="checkbox" formControlName="pago" />
     </label>
+
+    <label>Centro de Custo:</label>
+    <select formControlName="centroCusto" (change)="onCentroCustoChange($event)">
+      <option *ngFor="let centro of centrosCusto" [value]="centro.id">{{ centro.nome }}</option>
+      <option value="novo">+ Novo centro de custo</option>
+    </select>
+    
+    <div *ngIf="mostrarNovoCentroCusto[0]">
+      <input type="text" placeholder="Novo centro de custo" (blur)="adicionarNovoCentroCusto($event)" />
+    </div>
+    
+    <label>Natureza:</label>
+    <select formControlName="natureza" (change)="onNaturezaChange($event)">
+      <option *ngFor="let natureza of naturezas" [value]="natureza.id">{{ natureza.nome }}</option>
+      <option value="novo">+ Nova natureza</option>
+    </select>
+    
+    <div *ngIf="mostrarNovaNatureza[0]">
+      <input type="text" placeholder="Nova natureza" (blur)="adicionarNovaNatureza($event)" />
+    </div>
+    
 
     <div class="botoes-form">
       <button type="submit">Salvar</button>

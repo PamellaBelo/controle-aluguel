@@ -7,6 +7,7 @@ import { authGuard } from './auth/auth-guard';
 import { DefaultRegisterLayout } from './components/default-register-layout/default-register-layout';
 import { GestaoDespesas } from './pages/gestao-despesas/gestao-despesas';
 import { AdicionarEditar } from './pages/adicionar-editar/adicionar-editar';
+import { CadastrarEditar } from './pages/cadastrar-editar/cadastrar-editar';
 
 export const routes: Routes = [
    {
@@ -26,12 +27,8 @@ export const routes: Routes = [
       path: '', redirectTo: 'gestao-despesas', pathMatch: 'full' },
       { path: 'gestao de despesas', component: GestaoDespesas},
       { path: 'adicionar-editar', component: AdicionarEditar },
-      { path: 'adicionar-editar/:id', component: AdicionarEditar },
-
+     // { path: 'adicionar-editar/:id', component: AdicionarEditar },
+      { path: 'cadastrar-editar', component: CadastrarEditar},
   ]
 },
-
-
-
-
 ];
