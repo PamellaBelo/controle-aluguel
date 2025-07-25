@@ -4,7 +4,7 @@ import { Sidebar } from '../../components/sidebar/sidebar';
 
 @Component({
   selector: 'app-home',
-  imports: [RouterModule, Sidebar,],
+  imports: [RouterModule,],
   templateUrl: './home.html',
   styleUrl: './home.scss'
 })

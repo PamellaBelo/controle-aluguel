@@ -1,0 +1,53 @@
+.unidades-container {
+    padding: 20px;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .nova-unidade-btn {
+    background-color: #7001fd;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .nova-unidade-btn:hover {
+    background-color: #5e01d1;
+  }
+  
+  .formulario {
+    margin-top: 20px;
+  
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+  
+      input {
+        padding: 6px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+  
+      button {
+        width: fit-content;
+        padding: 6px 12px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+  
+      button:disabled {
+        background-color: #aaa;
+      }
+    }
+  }
+  

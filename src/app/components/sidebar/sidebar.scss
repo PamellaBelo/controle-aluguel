@@ -1,68 +1,65 @@
 @use "../../../styles/variables" as *;
 
-
 .layout {
-    display: flex;
-    height: 100vh;
-  }
-  
-  .sidebar {
-    width: 200px;
-    background-color: #f8f8f8;
-    padding: 20px 10px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  .sidebar button {
-    background-color: transparent;
-    border: none;
-    padding: 10px 20px;
-    width: 100%;
-    text-align: left;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  
-    &.active {
-      background-color: #9575cd; // roxo ou a cor que quiser
-      color: white;
-    }
-  
-    &:hover {
-      background-color: #9575cd; // tom mais claro no hover
-    }
-  }
-  
- 
-  
-  .main-area {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  
-  .menu-header {
-    height: 40px;
-    display: flex;
-    align-items: center;
-    padding-left: 10px;
-  }
-  
-  .menu-icon {
-    font-size: 20px;
-    cursor: pointer;
-  }
-  
-  
-  .top-line {
-    height: 2px;
-    background-color: #7001FD;
-    width: 100%;
-  }
-  
- 
-  .content {
-    flex: 1;
-    padding: 20px;
-  }
-  
+  display: flex;
+  height: 100vh; /* já estava certo */
+}
+
+.sidebar {
+  width: 200px;
+  height: 100%; /* garante que vá até o final da tela */
+  background-color: #f8f8f8;
+  padding: 20px 10px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar button {
+  background-color: transparent;
+  border: none;
+  padding: 10px 20px;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar button.active {
+  background-color: #9575cd;
+  color: white;
+}
+
+.sidebar button:hover {
+  background-color: #9575cd;
+  color: white;
+}
+
+.main-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-header {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+}
+
+.menu-icon {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.top-line {
+  height: 2px;
+  background-color: #7001FD;
+  width: 100%;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+}

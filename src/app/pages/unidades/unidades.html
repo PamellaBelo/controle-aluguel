@@ -1,0 +1,14 @@
+<div class="unidades-container">
+    <div class="header">
+      <h2>Unidades</h2>
+      <button class="nova-unidade-btn" (click)="toggleFormulario()">Nova Unidade</button>
+    </div>
+  
+    <div *ngIf="mostrarFormulario" class="formulario">
+      <form (ngSubmit)="salvarUnidade()" #form="ngForm">
+      
+        <button type="submit" [disabled]="form.invalid">Salvar</button>
+      </form>
+    </div>
+  </div>
+  

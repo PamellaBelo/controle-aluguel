@@ -8,6 +8,8 @@ import { DefaultRegisterLayout } from './components/default-register-layout/defa
 import { GestaoDespesas } from './pages/gestao-despesas/gestao-despesas';
 import { AdicionarEditar } from './pages/adicionar-editar/adicionar-editar';
 import { CadastrarEditar } from './pages/cadastrar-editar/cadastrar-editar';
+import { Unidades } from './pages/unidades/unidades';
+import { Sidebar } from './components/sidebar/sidebar';
 
 export const routes: Routes = [
    {
@@ -18,17 +20,15 @@ export const routes: Routes = [
    path :"cadastro",
    component: DefaultRegisterLayout
    }, 
-{
-   path: '', 
-   component: Home,
-//  canActivate: [authGuard]
-  children: [
    {
-      path: '', redirectTo: 'gestao-despesas', pathMatch: 'full' },
-      { path: 'gestao de despesas', component: GestaoDespesas},
-      { path: 'adicionar-editar', component: AdicionarEditar },
-     // { path: 'adicionar-editar/:id', component: AdicionarEditar },
-      { path: 'cadastrar-editar', component: CadastrarEditar},
-  ]
-},
+      path: '',
+      component: Sidebar, 
+      children: [
+        { path: 'home', component: Home },
+        { path: 'unidades', component: Unidades },
+      ]
+   },
+   { path: '', redirectTo: 'home', pathMatch: 'full' },
+   { path: '**', redirectTo: 'home' }
+    
 ];

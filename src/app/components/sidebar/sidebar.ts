@@ -15,8 +15,14 @@ import { GestaoDespesas } from '../../pages/gestao-despesas/gestao-despesas';
 export class Sidebar implements OnInit {
   activeRoute: string = '';
   sidebarVisible = true;
+  mostrarSubmenu = false;
 
   constructor(private router: Router) {}
+
+
+  togglePropriedades(){
+    this.mostrarSubmenu= !this.mostrarSubmenu;
+  }
 
   ngOnInit() {
     this.router.events

@@ -14,6 +14,7 @@ export interface Imovel{
 })
 
 export class ImovelService{
+    
     private readonly STORAGE_KEY = 'imoveis';
 
     constructor(){}

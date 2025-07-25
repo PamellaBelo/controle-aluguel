@@ -1,38 +1,22 @@
 <div class="layout">
-    <aside class="sidebar" *ngIf="sidebarVisible">
-    <button 
-    [class.active]="activeRoute === '/'"
-    (click)="goHome()"
-    >Home</button>
-    <button
-    [class.active] ="activeRoute === '/gestao-despesas'"
-    routerLink="/gestao-despesas"
-    >Gestão de despesas</button>
-    <button
-    [class.active] ="activeRoute === '/adicionar-editar'"
-    routerLink="/adicionar-editar"
-    >Adicionar/editar</button>
-    <button
-    [class.active]="activeRoute === 'historico-pagamentos'"
-    routerlink="/historico-pagamentos"
-    >Historico de pagamentos</button>
-    <button
-    [class.active]="activeRoute === '/cadastrar-editar'"
-    routerlink="/cadastrar-editar"
-    >Cadastrar/editar imóvel</button>
-    </aside>
-      
-    <div class="main-area">
-      <div class="menu-header">
-        
-        <div class="menu-icon" (click)="toggleSidebar()">☰</div>
-      </div>
- 
-      <div class="top-line"></div>
-      
-      <main class="content">
-        <router-outlet></router-outlet>
-      </main>
+  <div class="sidebar">
+    <button routerLink="/home" routerLinkActive="active">Home</button>
+
+    <button (click)="togglePropriedades()">Propriedades</button>
+    <div *ngIf="mostrarSubmenu" style="padding-left: 20px;">
+      <button routerLink="/unidades" routerLinkActive="active">
+        Unidades</button>
     </div>
   </div>
-  
+
+  <div class="main-area">
+    <div class="menu-header">
+      <span class="menu-icon">📂 Sistema de Aluguel</span>
+    </div>
+    <div class="top-line"></div>
+
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
