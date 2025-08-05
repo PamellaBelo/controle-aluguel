@@ -1,14 +1,35 @@
-<div class="unidades-container">
-    <div class="header">
-      <h2>Unidades</h2>
-      <button class="nova-unidade-btn" (click)="toggleFormulario()">Nova Unidade</button>
-    </div>
-  
-    <div *ngIf="mostrarFormulario" class="formulario">
-      <form (ngSubmit)="salvarUnidade()" #form="ngForm">
-      
-        <button type="submit" [disabled]="form.invalid">Salvar</button>
-      </form>
-    </div>
-  </div>
-  
+<div class="container">
+  <h2>Unidades Cadastradas</h2>
+
+  <button routerLink="/novaunidade" class="btn-adicionar">Adicionar nova unidade</button>
+
+  <table class="tabela-unidades">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Tipo</th>
+        <th>Endereço</th>
+        <th>Cidade</th>
+        <th>Estado</th>
+        <th>Alugado?</th>
+        <th>Valor do Aluguel</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let unidade of unidades; let i = index">
+        <td>{{ unidade.id }}</td>
+        <td>{{ unidade.tipo }}</td>
+        <td>{{ unidade.endereco }}</td>
+        <td>{{ unidade.cidade }}</td>
+        <td>{{ unidade.estado }}</td>
+        <td>{{ unidade.alugado ? 'Sim' : 'Não' }}</td>
+        <td>{{ unidade.valorAluguel | currency:'BRL' }}</td>
+        <td>
+          <button (click)="editarUnidade(i)">Editar</button>
+          <button (click)="excluirUnidade(i)">Excluir</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

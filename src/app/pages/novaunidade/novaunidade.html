@@ -1,0 +1,43 @@
+<div class="form-container">
+    <h2>Nova Unidade</h2>
+  
+    <form [formGroup]="unidadeForm" (ngSubmit)="onSubmit()">
+        <label>Tipo*</label>
+        <select formControlName="tipo">
+          <option value="" disabled>Selecione o tipo</option>
+          <option value="Casa">Casa</option>
+          <option value="Apartamento">Apartamento</option>
+          <option value="Sala">Sala</option>
+          <option value="Comercial">Comercial</option>
+        </select>
+        
+  
+      <label>Endereço*</label>
+      <input formControlName="endereco" type="text">
+  
+      <label>Cidade*</label>
+      <input formControlName="cidade" type="text">
+  
+      <label>Estado*</label>
+      <input formControlName="estado" type="text">
+  
+      <label>CEP*</label>
+      <input formControlName="cep" type="text">
+  
+      <label>Descrição</label>
+      <textarea formControlName="descricao"></textarea>
+  
+      <label>Alugado?</label>
+      <input formControlName="alugado" type="checkbox">
+  
+      <label>Valor do Aluguel</label>
+      <input formControlName="valorAluguel" type="number">
+  
+      <label>Data de Início</label>
+      <input formControlName="dataInicio" type="date">
+  
+      <button type="submit" [disabled]="unidadeForm.invalid">Salvar</button>
+      <button type="button" (click)="router.navigate(['/unidades'])">Cancelar</button>
+    </form>
+  </div>
+  

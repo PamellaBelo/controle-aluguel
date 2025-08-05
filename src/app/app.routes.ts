@@ -5,11 +5,11 @@ import { Register } from './pages/register/register';
 import { Home } from './pages/home/home';
 import { authGuard } from './auth/auth-guard';
 import { DefaultRegisterLayout } from './components/default-register-layout/default-register-layout';
-import { GestaoDespesas } from './pages/gestao-despesas/gestao-despesas';
-import { AdicionarEditar } from './pages/adicionar-editar/adicionar-editar';
-import { CadastrarEditar } from './pages/cadastrar-editar/cadastrar-editar';
+
+
 import { Unidades } from './pages/unidades/unidades';
 import { Sidebar } from './components/sidebar/sidebar';
+import { Novaunidade } from './pages/novaunidade/novaunidade';
 
 export const routes: Routes = [
    {
@@ -26,6 +26,7 @@ export const routes: Routes = [
       children: [
         { path: 'home', component: Home },
         { path: 'unidades', component: Unidades },
+        { path: 'novaunidade', loadComponent: () => import ('./pages/novaunidade/novaunidade').then(m => m.Novaunidade)}
       ]
    },
    { path: '', redirectTo: 'home', pathMatch: 'full' },
